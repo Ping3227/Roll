@@ -15,7 +15,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public event Action OnPlayerDead;
 
     private BallController player;
-    [SerializeField] SceneAsset gameScene;
+    [SerializeField] string gameScene;
     private float timer = 0f;
     
     private bool isGameActive = false;
@@ -32,7 +32,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         
-        if (scene.name == gameScene.name)
+        if (scene.name == gameScene)
         {
             isGameActive = true;
             

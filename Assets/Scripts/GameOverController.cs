@@ -20,7 +20,8 @@ public class GameOverController : MonoBehaviour
     void ShowGameOverPanel(float timer)
     {
         gameOverPanel.SetActive(true);
-        gameOverText.SetText("Finished \n Time: " + timer.ToString("F2"));
+        // Timer to 0:00 format
+        gameOverText.text = "Finished \n Time: " + (timer / 60).ToString("00") + ":" + (timer % 60).ToString("00");
     }
 
     void ReturnToMainMenu()
