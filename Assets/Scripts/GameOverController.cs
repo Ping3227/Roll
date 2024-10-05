@@ -21,7 +21,10 @@ public class GameOverController : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         // Timer to 0:00 format
-        gameOverText.text = "Finished \n Time: " + (timer / 60).ToString("00") + ":" + (timer % 60).ToString("00");
+        int minutes = Mathf.FloorToInt(timer / 60f);
+        int seconds = Mathf.FloorToInt(timer % 60f);
+        
+        gameOverText.text = "Finished \n Time: " + $"{minutes:00}:{seconds:00}";
     }
 
     void ReturnToMainMenu()
